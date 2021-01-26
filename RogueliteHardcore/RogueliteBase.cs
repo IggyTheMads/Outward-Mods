@@ -23,7 +23,7 @@ namespace RogueliteHardcore
         public static RogueliteBase Instance;
         public static RogueliteSaveData History;
         public static string ModFolder = Environment.CurrentDirectory + @"\BepInEx\plugins\HardcoreRoguelike\";
-        public static string SaveLocation = "SavedValues.xml";
+        public static string SaveLocation = "TombStones.xml";
 
         public static XmlSerializer serial = new XmlSerializer(typeof(RogueliteSaveData));
 
@@ -42,7 +42,6 @@ namespace RogueliteHardcore
                 Save();
             }
 
-
             var harmony = new Harmony(GUID);
             harmony.PatchAll();
 
@@ -54,7 +53,9 @@ namespace RogueliteHardcore
             History = null;
 
             if (Directory.Exists(ModFolder + SaveLocation))
+            {
                 using (FileStream fileStream = File.OpenRead(ModFolder + SaveLocation))
+                {
                     try
                     {
                         History = serial.Deserialize(fileStream) as RogueliteSaveData;
@@ -63,6 +64,8 @@ namespace RogueliteHardcore
                     {
                         Instance.Logger.Log(LogLevel.Error, "Couldn't Load SavedValues.xml");
                     }
+                }
+            }
         }
 
         public static void Save()
