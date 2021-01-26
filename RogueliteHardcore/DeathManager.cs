@@ -8,7 +8,7 @@ using SideLoader;
 using HarmonyLib;
 using UnityEngine;
 
-namespace RoguelikeHardcore
+namespace RogueliteHardcore
 {
     public class DeathManager : MonoBehaviour
     {
