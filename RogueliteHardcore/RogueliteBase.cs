@@ -16,8 +16,8 @@ namespace RogueliteHardcore
     [BepInPlugin(GUID, NAME, VERSION)]
     public class RogueliteBase : BaseUnityPlugin
     {
-        const string GUID = "com.iggy.roguelike";
-        const string NAME = "Roguelike Hardcore";
+        const string GUID = "com.iggy.roguelite";
+        const string NAME = "Roguelite Hardcore";
         const string VERSION = "1.0";
 
         public static RogueliteBase Instance;
