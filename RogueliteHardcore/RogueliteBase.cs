@@ -34,6 +34,8 @@ namespace RogueliteHardcore
             var _obj = this.gameObject;
             _obj.AddComponent<DeathManager>();
 
+            Load();
+
             if (History == null)
             {
                 History = new RogueliteSaveData();
@@ -49,6 +51,8 @@ namespace RogueliteHardcore
 
         public static void Load()
         {
+            History = null;
+
             if (Directory.Exists(ModFolder + SaveLocation))
                 using (FileStream fileStream = File.OpenRead(ModFolder + SaveLocation))
                     try
