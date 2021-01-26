@@ -7,8 +7,8 @@
     <ProjectGuid>{CF11A60E-F98D-4457-8CE7-A10FD263CEB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RoguelikeHardcore</RootNamespace>
-    <AssemblyName>RoguelikeHardcore</AssemblyName>
+    <RootNamespace>RogueliteHardcore</RootNamespace>
+    <AssemblyName>RogueliteHardcore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeathManager.cs" />
-    <Compile Include="RogueliteBase.cs" />
+    <Compile Include="RogueLiteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,8 +16,6 @@ namespace RogueliteHardcore
         public Character player;
         public ItemContainer itemContainer;
 
-        public string path = @"D:\Program Files (x86)\Steam\steamapps\common\Outward\BepInEx\plugins\HardcoreRoguelike\SavedValues.txt";
-
         internal void Awake()
         {
             Instance = this;
@@ -30,6 +28,10 @@ namespace RogueliteHardcore
             //Get character.
             player = CharacterManager.Instance.GetFirstLocalCharacter();
             itemContainer = FindObjectOfType<ItemContainer>();
+
+            /*
+             * 
+             * Temp disable
 
             //TESTING SHIIT--------------------------------------------------------
             bool firstSpawn = bool.Parse(System.IO.File.ReadLines(path).Skip(12).Take(1).First());
@@ -63,6 +65,8 @@ namespace RogueliteHardcore
                 boolLine[12] = "false";
                 System.IO.File.WriteAllLines(Instance.path, boolLine);
             }
+
+            */
         }
 
         [HarmonyPatch(typeof(DefeatScenariosManager), "DefeatHardcoreDeath")]
