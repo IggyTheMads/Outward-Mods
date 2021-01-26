@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeathManager.cs" />
-    <Compile Include="RoguelikeBase.cs" />
+    <Compile Include="RogueliteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

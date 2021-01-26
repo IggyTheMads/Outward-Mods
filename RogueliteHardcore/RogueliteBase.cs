@@ -8,17 +8,17 @@ using SideLoader;
 using HarmonyLib;
 using UnityEngine;
 
-namespace RoguelikeHardcore
+namespace RogueliteHardcore
 {
     [BepInPlugin(GUID, NAME, VERSION)]
 
-    public class RoguelikeBase : BaseUnityPlugin
+    public class RogueliteBase : BaseUnityPlugin
     {
         const string GUID = "com.iggy.roguelike";
         const string NAME = "Roguelike Hardcore";
         const string VERSION = "1.0";
 
-        public static RoguelikeBase Instance;
+        public static RogueliteBase Instance;
 
         internal void Awake()
         {
