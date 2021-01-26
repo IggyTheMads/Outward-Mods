@@ -34,27 +34,42 @@ namespace RogueliteHardcore
             var _obj = this.gameObject;
             _obj.AddComponent<DeathManager>();
 
-            if(Directory.Exists(ModFolder + SaveLocation))
+            if (History == null)
             {
-                using(FileStream fileStream = File.OpenRead(ModFolder + SaveLocation))
-                {
-                    try
-                    {
-                        History = serial.Deserialize(fileStream) as RogueliteSaveData;
-                    } catch (Exception)
-                    {
-                        Logger.Log(LogLevel.Error, "Couldn't Load SavedValues.xml");
-                    }
-                }
+                History = new RogueliteSaveData();
+                Save();
             }
 
-            if (History == null)
-                History = new RogueliteSaveData();
 
             var harmony = new Harmony(GUID);
             harmony.PatchAll();
 
             Logger.Log(LogLevel.Message, "Roguelite Started...");
+        }
+
+        public static void Load()
+        {
+            if (Directory.Exists(ModFolder + SaveLocation))
+                using (FileStream fileStream = File.OpenRead(ModFolder + SaveLocation))
+                    try
+                    {
+                        History = serial.Deserialize(fileStream) as RogueliteSaveData;
+                    }
+                    catch (Exception)
+                    {
+                        Instance.Logger.Log(LogLevel.Error, "Couldn't Load SavedValues.xml");
+                    }
+        }
+
+        public static void Save()
+        {
+            Directory.CreateDirectory(ModFolder);
+            string path = ModFolder + SaveLocation;
+            if (File.Exists(path))
+                File.Delete(path);
+
+            using (FileStream fileStream = File.Create(path))
+                serial.Serialize(fileStream, History);
         }
     }
 
@@ -72,7 +87,14 @@ namespace RogueliteHardcore
 
     public class RogueliteEqmtData
     {
-        List<int> eqmtIDs;
-        string Name;
+        public List<int> EqmtIDs;
+        public string Name;
+
+        // TODO: Add tombstone to death location
+        //       MAKE SURE YOU CAN WALK THROUGH IT
+        //          and probably see through it
+        //       OR make it invisible during combat and fade in after combat ends
+        public AreaManager.AreaEnum DeathScene;
+        public Vector3 Position;
     }
 }
