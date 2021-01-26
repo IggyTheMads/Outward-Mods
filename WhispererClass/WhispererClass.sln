@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhispererClass", "WhispererClass.csproj", "{51920C51-4EB1-4437-9246-C9D37A50D69C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51920C51-4EB1-4437-9246-C9D37A50D69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51920C51-4EB1-4437-9246-C9D37A50D69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51920C51-4EB1-4437-9246-C9D37A50D69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51920C51-4EB1-4437-9246-C9D37A50D69C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D9B6E3C-D1DC-4661-A192-7BF26132422E}
+	EndGlobalSection
+EndGlobal
